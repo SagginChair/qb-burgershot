@@ -2,11 +2,11 @@
 -- target
 
 Citizen.CreateThread(function()
-	exports['qb-target']:AddBoxZone("BurgerShotDuty", vector3(-1196.95, -902.69, 14.0), 1, 1.2, {
+	exports['qb-target']:AddBoxZone("BurgerShotDuty", vector3(-1192.28, -897.63, 14.0), 1, 1.2, {
 		name = "BurgerShotDuty",
 		heading = 32,
 		debugPoly = false,
-		minZ=14.0,
+		minZ=12.0,
 		maxZ=18.0,
 	}, {
 		options = {
