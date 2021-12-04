@@ -55,7 +55,7 @@ Config.SQL = 'oxmysql' --- oxmysql or ghmattisql
 
 Config.Items = {
 label = "Shop",
-    slots = 7,
+    slots = 8,
     items = {
         [1] = {
             name = "burger-bun",
@@ -113,5 +113,16 @@ label = "Shop",
             type = "item",
             slot = 7,
         },
+        [8] = {
+            name = "bsnyquil",
+            price = 0,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 8,
+        },
     }
 }
+
+Config.BSIllegalCost1 = 4000
+Config.BSIllegalCost2 = 9000

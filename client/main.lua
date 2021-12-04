@@ -323,6 +323,156 @@ AddEventHandler("qb-burgershot:MeatFree", function()
 	end  
 end)
 
+--Lean Next 3 Lines
+
+RegisterNetEvent("qb-burgershot:leancup1")
+AddEventHandler("qb-burgershot:leancup1", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:leancup1', function(HasItems)  
+    		if HasItems then
+				QBCore.Functions.Progressbar("pickup_sla", "Making Lean", 5000, false, true, {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+							TriggerServerEvent('QBCore:Server:RemoveItem', "burger-sodasyrup", 1)
+                    		TriggerServerEvent('QBCore:Server:RemoveItem', "bsnyquil", 1)
+							TriggerServerEvent('QBCore:Server:AddItem', "bslean1", 1)
+                    		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["bslean1"], "add")
+                   			QBCore.Functions.Notify("You Made Some Lean", "success")
+				end, function()
+					QBCore.Functions.Notify("Cancelled..", "error")
+				end)
+			else
+   				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end  
+end)
+
+RegisterNetEvent("qb-burgershot:leancup2")
+AddEventHandler("qb-burgershot:leancup2", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:leancup2', function(HasItems)  
+    		if HasItems then
+				QBCore.Functions.Progressbar("pickup_sla", "Making Lean", 5000, false, true, {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+							TriggerServerEvent('QBCore:Server:RemoveItem', "burger-sodasyrup", 1)
+                    		TriggerServerEvent('QBCore:Server:RemoveItem', "bsnyquil", 1)
+							TriggerServerEvent('QBCore:Server:RemoveItem', "methspraypaint", 1)
+							TriggerServerEvent('QBCore:Server:AddItem', "bslean2", 1)
+                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["bslean2"], "add")
+                   			QBCore.Functions.Notify("You Made Some Lean", "success")
+				end, function()
+					QBCore.Functions.Notify("Cancelled..", "error")
+				end)
+			else
+   				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end  
+end)
+
+RegisterNetEvent("qb-burgershot:leancup3")
+AddEventHandler("qb-burgershot:leancup3", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:leancup3', function(HasItems)  
+    		if HasItems then
+				QBCore.Functions.Progressbar("pickup_sla", "Making Lean", 5000, false, true, {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+							TriggerServerEvent('QBCore:Server:RemoveItem', "burger-sodasyrup", 1)
+                    		TriggerServerEvent('QBCore:Server:RemoveItem', "bsnyquil", 1)
+							TriggerServerEvent('QBCore:Server:RemoveItem', "methgallonpaint", 1)
+							TriggerServerEvent('QBCore:Server:AddItem', "bslean3", 1)
+                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["bslean3"], "add")
+                   			QBCore.Functions.Notify("You Made Some Lean", "success")
+				end, function()
+					QBCore.Functions.Notify("Cancelled..", "error")
+				end)
+			else
+   				QBCore.Functions.Notify("You dont have the ingredients to make this", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end  
+end)
+
+--Illegal Items Costs
+
+RegisterNetEvent("qb-burgershot:MethProducts1")
+AddEventHandler("qb-burgershot:MethProducts1", function()
+        QBCore.Functions.TriggerCallback('qb-blackmarket:server:get:MethProducts1', function(bankMoney)  
+         if bankMoney >= Config.BSIllegalCost1 then
+                QBCore.Functions.Progressbar("pick_sla", "Buying", 1000, false, true, {
+                    disableMovement = true,
+                    disableCarMovement = true,
+                    disableMouse = false,
+                    disableCombat = true,
+                }, {
+                    animDict = "mp_common",
+                    anim = "givetake1_a",
+                    flags = 8,
+                }, {}, {}, function() -- Done
+                    TriggerServerEvent('QBCore:Server:AddItem', "methspraypaint", 1)
+                                TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["methspraypaint"], "add")
+                                QBCore.Functions.Notify("You Bought an Illegal Item", "success")
+                end, function()
+                    QBCore.Functions.Notify("Cancelled", "error")
+                end)
+            end
+        end)
+    end)
+
+	RegisterNetEvent("qb-burgershot:MethProducts2")
+	AddEventHandler("qb-burgershot:MethProducts2", function()
+			QBCore.Functions.TriggerCallback('qb-blackmarket:server:get:MethProducts2', function(bankMoney)  
+			 if bankMoney >= Config.BSIllegalCost2 then
+					QBCore.Functions.Progressbar("pick_sla", "Buying", 1000, false, true, {
+						disableMovement = true,
+						disableCarMovement = true,
+						disableMouse = false,
+						disableCombat = true,
+					}, {
+						animDict = "mp_common",
+						anim = "givetake1_a",
+						flags = 8,
+					}, {}, {}, function() -- Done
+						TriggerServerEvent('QBCore:Server:AddItem', "methgallonpaint", 1)
+									TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["methgallonpaint"], "add")
+									QBCore.Functions.Notify("You Bought an Illegal Item", "success")
+					end, function()
+						QBCore.Functions.Notify("Cancelled", "error")
+					end)
+				end
+			end)
+		end)
+	
 
 
 RegisterNetEvent("qb-burgershot:SoftDrink")

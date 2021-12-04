@@ -145,7 +145,7 @@ Citizen.CreateThread(function()
 		distance = 1.5
 	    })
 
-        exports['qb-target']:AddBoxZone("burgershotdrinks2", vector3(-1189.08, -905.28, 14.0), 1.15, 0.7, {
+        exports['qb-target']:AddBoxZone("burgershotdrinks2", vector3(-1188.81, -905.22, 14.0), 0.8, 1.5, {
             name="burgershotdrinks2",
             heading=33,
             debugPoly=false,
@@ -217,6 +217,24 @@ Citizen.CreateThread(function()
                     },
                 },
                 distance = 1.5
+            })
+
+         exports['qb-target']:AddBoxZone("burgershotillegal", vector3(-1190.54, -902.99, 14.92), 0.7, 1.7, {
+            name="burgershotillegal",
+            heading=304,
+            debugPoly=true,
+            minZ=13.0,
+            maxZ=14.4,
+        }, {
+                options = {
+                    {
+                        event = "nh-context:DarkMarketBS",
+                        icon = "fas fa-cheeseburger",
+                        label = "Don't Touch",
+                        job = "burgershot",
+                    },
+                },
+                distance = 2.0
             })
 
 
@@ -400,6 +418,38 @@ RegisterNetEvent('nh-context:OrderMenu', function(data)
     })
 end)
 
+RegisterNetEvent('nh-context:DarkMarketBS', function(data)
+    TriggerEvent('nh-context:sendMenu', {
+        {
+            id = 0,
+            header = "| Illegal Items |",
+            txt = "",
+        },
+        {
+            id = 1,
+            header = "• Spray Paint Thinner ",
+            txt = "Cost : $4000 ",
+            params = {
+                event = "qb-burgershot:MethProducts1"
+            }
+        },
+        {
+            id = 2,
+            header = "• Gallon of Paint ",
+            txt = "Cost : $9000 ",
+            params = {
+                event = "qb-burgershot:MethProducts2"
+            }
+        },
+        {
+            id = 3,
+            header = "Close (ESC)",
+            txt = "",
+        },
+    })
+end)
+
+
 RegisterNetEvent('nh-context:DrinkMenu', function(data)
     TriggerEvent('nh-context:sendMenu', {
         {
@@ -425,6 +475,30 @@ RegisterNetEvent('nh-context:DrinkMenu', function(data)
         },
         {
             id = 3,
+            header = "• Small Cup of Lean",
+            txt = "Soda Syrup, NyQuil",
+            params = {
+                event = "qb-burgershot:leancup1"
+            }
+        },
+        {
+            id = 4,
+            header = "• Big Cup of Lean",
+            txt = "Soda Syrup, Nyquil, Spray Paint",
+            params = {
+                event = "qb-burgershot:leancup2"
+            }
+        },
+        {
+            id = 5,
+            header = "• Bottle of Lean",
+            txt = "Soda Syrup, NyQuil, Gallon of Paint",
+            params = {
+                event = "qb-burgershot:leancup3"
+            }
+        },
+        {
+            id = 6,
             header = "Close (ESC)",
             txt = "",
         },

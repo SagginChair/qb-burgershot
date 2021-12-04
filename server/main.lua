@@ -91,6 +91,72 @@ QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientMurderMeal',
     end
 end)
 
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:leancup1', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local sodasyrup = Ply.Functions.GetItemByName("burger-sodasyrup")
+    local nyquil = Ply.Functions.GetItemByName("bsnyquil")
+    if sodasyrup ~= nil and nyquil ~= nil then
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:leancup2', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local sodasyrup = Ply.Functions.GetItemByName("burger-sodasyrup")
+    local nyquil = Ply.Functions.GetItemByName("bsnyquil")
+    local spaint = Ply.Functions.GetItemByName("methspraypaint")
+    if sodasyrup ~= nil and nyquil ~= nil and spaint ~= nil then
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:leancup3', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local sodasyrup = Ply.Functions.GetItemByName("burger-sodasyrup")
+    local nyquil = Ply.Functions.GetItemByName("bsnyquil")
+    local gpaint = Ply.Functions.GetItemByName("methgallonpaint")
+    if sodasyrup ~= nil and nyquil ~= nil and gpaint ~= nil then
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
+QBCore.Functions.CreateCallback("qb-blackmarket:server:get:MethProducts1", function(source, cb)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local price = 4000
+    local bankMoney = Player.PlayerData.money["cash"]
+    if bankMoney >= price then
+        Player.Functions.RemoveMoney('cash', price, "Item Purchased")
+        cb(bankMoney)
+    else
+        TriggerClientEvent('QBCore:Notify', src, 'You Dont Have Enough Cash', 'error')
+        cb(bankMoney)
+    end
+end)
+
+QBCore.Functions.CreateCallback("qb-blackmarket:server:get:MethProducts2", function(source, cb)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local price = 9000
+    local bankMoney = Player.PlayerData.money["cash"]
+    if bankMoney >= price then
+        Player.Functions.RemoveMoney('cash', price, "Item Purchased")
+        cb(bankMoney)
+    else
+        TriggerClientEvent('QBCore:Notify', src, 'You Dont Have Enough Cash', 'error')
+        cb(bankMoney)
+    end
+end)
+
 QBCore.Functions.CreateUseableItem("burger-murdermeal", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
     TriggerClientEvent("qb-burgershot:MurderMeal", source, item.name)
