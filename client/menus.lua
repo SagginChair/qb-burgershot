@@ -222,7 +222,7 @@ Citizen.CreateThread(function()
          exports['qb-target']:AddBoxZone("burgershotillegal", vector3(-1190.54, -902.99, 14.92), 0.7, 1.7, {
             name="burgershotillegal",
             heading=304,
-            debugPoly=true,
+            debugPoly=false,
             minZ=13.0,
             maxZ=14.4,
         }, {
