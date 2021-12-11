@@ -63,7 +63,7 @@ RegisterNetEvent('qb-burgershot:garage')
 AddEventHandler('qb-burgershot:garage', function(bs)
     local vehicle = bs.vehicle
     local coords = vector4(-1172.861, -888.4072, 13.940833, 40.516719)
-        if PlayerData.job.name == "burgershot" then
+        if PlayerData.job.name == "brioso" then
             if vehicle == 'stalion2' then		
                 QBCore.Functions.SpawnVehicle(vehicle, function(veh)
                     SetVehicleNumberPlateText(veh, "BURGER"..tostring(math.random(1000, 9999)))
@@ -97,12 +97,12 @@ RegisterNetEvent('garage:BurgerShotGarage', function()
         },
         {
             id = 2,
-            header = "• Stallion",
-            txt = "Declasse Burger Shot Stallion",
+            header = "• Brioso",
+            txt = "Two Door Brioso",
             params = {
                 event = "qb-burgershot:garage",
                 args = {
-                    vehicle = 'stalion2',
+                    vehicle = 'brioso',
                 }
             }
         },
