@@ -126,3 +126,11 @@ label = "Shop",
 
 Config.BSIllegalCost1 = 4000
 Config.BSIllegalCost2 = 9000
+
+Config.CustomerCost1 = 1
+Config.CustomerCost2 = 1
+Config.CustomerCost3 = 1
+Config.CustomerCost4 = 1
+Config.CustomerCost5 = 1
+Config.CustomerCost6 = 1
+

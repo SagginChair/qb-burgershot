@@ -14,7 +14,6 @@ Citizen.CreateThread(function()
 			event = "qb-burgershot:DutyB",
 			icon = "far fa-clipboard",
 			label = "Clock On/Off",
-			job = "burgershot",
 		    },
 		},
 		distance = 1.5
@@ -84,7 +83,6 @@ Citizen.CreateThread(function()
 				event = "qb-burgershot:PattyFry",
 				icon = "fas fa-hamburger",
 				label = "Burger Cook Station",
-				job = "burgershot",
 			},
 		},
 		distance = 1.5
@@ -102,7 +100,6 @@ Citizen.CreateThread(function()
 				event = "qb-burgershot:PattyFry",
 				icon = "fas fa-hamburger",
 				label = "Burger Cook Station 2",
-				job = "burgershot",
 			},
 		},
 		distance = 1.5
@@ -120,7 +117,6 @@ Citizen.CreateThread(function()
 			    event = "qb-burgershot:Fries",
 			    icon = "fas fa-box",
 			    label = "Make Fries",
-			    job = "burgershot",
 			},
 		    },
 		    distance = 1.5
@@ -139,7 +135,6 @@ Citizen.CreateThread(function()
 			event = "nh-context:DrinkMenu",
 			icon = "fas fa-filter",
 			label = "Make Some Drinks",
-			job = "burgershot",
 		    },
 		},
 		distance = 1.5
@@ -157,7 +152,6 @@ Citizen.CreateThread(function()
                         event = "nh-context:DrinkMenu",
                         icon = "fas fa-filter",
                         label = "Make Some Drinks",
-                        job = "burgershot",
                     },
                 },
                 distance = 1.5
@@ -176,7 +170,6 @@ Citizen.CreateThread(function()
                         event = "nh-context:OrderMenu",
                         icon = "fas fa-laptop",
                         label = "Order Ingredients!",
-                        job = "burgershot",
                     },
                 },
                 distance = 1.5
@@ -194,7 +187,6 @@ Citizen.CreateThread(function()
                         event = "qb-burgershot:Storage",
                         icon = "fas fa-box",
                         label = "Storage",
-                        job = "burgershot",
                     },
                 },
                 distance = 1.5
@@ -213,7 +205,6 @@ Citizen.CreateThread(function()
                         event = "nh-context:Burgers",
                         icon = "fas fa-cheeseburger",
                         label = "Burger Work Station",
-                        job = "burgershot",
                     },
                 },
                 distance = 1.5
@@ -231,7 +222,6 @@ Citizen.CreateThread(function()
                         event = "nh-context:DarkMarketBS",
                         icon = "fas fa-cheeseburger",
                         label = "Don't Touch",
-                        job = "burgershot",
                     },
                 },
                 distance = 2.0
@@ -251,7 +241,6 @@ Citizen.CreateThread(function()
                         parms = "1",
                         icon = "fas fa-credit-card",
                         label = "Charge Customer",
-                        job = "burgershot",
                     },
                 },
                 distance = 1.5
@@ -270,7 +259,6 @@ Citizen.CreateThread(function()
                             parms = "2",
                             icon = "fas fa-credit-card",
                             label = "Charge Customer",
-                            job = "burgershot",
                         },
                     },
                     distance = 1.5
@@ -290,7 +278,6 @@ Citizen.CreateThread(function()
                                     parms = "3",
                                     icon = "fas fa-credit-card",
                                     label = "Charge Customer",
-                                    job = "burgershot",
                                 },
                             },
                             distance = 1.5
@@ -312,11 +299,109 @@ Citizen.CreateThread(function()
                                 parms = "4",
                                 icon = "fas fa-credit-card",
                                 label = "Charge Customer",
-                                job = "burgershot",
                             },
                         },
                         distance = 1.5
             })
+
+    --BurgerShot Customers
+    exports['qb-target']:AddBoxZone("burgershotcustomer1", vector3(-1194.31, -883.52, 14.0), 2.0, 2.8, {
+        name="burgershotcustomer1",
+        heading=34,
+        debugPoly=true,
+        minZ=10.4,
+        maxZ=14.4,
+            }, {
+                    options = {
+                        {
+                            event = "qb-BurgerShot:BurgerShotCustomer1",
+                            icon = "utensils",
+                            label = "I want a Heart Stopper",
+                        },
+                    },
+                    distance = 2.5
+        })
+        exports['qb-target']:AddBoxZone("burgershotcustomer2", vector3(-1191.72, -886.78, 14.0), 3.8, 2.4, {
+        name="burgershotcustomer2",
+        heading=305,
+        debugPoly=true,
+        minZ=10.4,
+        maxZ=14.4,
+            }, {
+                    options = {
+                        {
+                            event = "qb-BurgerShot:BurgerShotCustomer2",
+                            icon = "utensils",
+                            label = "I want a Meat Free Burger",
+                        },
+                    },
+                    distance = 2.5
+        })
+        exports['qb-target']:AddBoxZone("burgershotcustomer3", vector3(-1188.96, -880.27, 14.0), 2.4, 2.4, {
+            name="burgershotcustomer3",
+            heading=35,
+            debugPoly=true,
+            minZ=10.4,
+            maxZ=14.4,
+                }, {
+                        options = {
+                            {
+                                event = "qb-BurgerShot:BurgerShotCustomer3",
+                                icon = "utensils",
+                                label = "I want a Bleeder Burger",
+                            },
+                        },
+                        distance = 2.5
+            })
+         exports['qb-target']:AddBoxZone("burgershotcustomer4", vector3(-1186.97, -889.29, 14.0), 2.2, 1.2, {
+            name="burgershotcustomer4",
+            heading=35,
+            debugPoly=true,
+            minZ=10.4,
+            maxZ=14.4,
+                }, {
+                        options = {
+                            {
+                                event = "qb-BurgerShot:BurgerShotCustomer4",
+                                icon = "utensils",
+                                label = "I want a Money Shot Burger",
+                            },
+                        },
+                        distance = 2.5
+            })
+            exports['qb-target']:AddBoxZone("burgershotcustomer5", vector3(-1189.1, -891.17, 14.0), 3.8, 2.4, {
+            name="burgershotcustomer5",
+            heading=305,
+            debugPoly=true,
+            minZ=10.4,
+            maxZ=14.4,
+                }, {
+                        options = {
+                            {
+                                event = "qb-BurgerShot:BurgerShotCustomer5",
+                                icon = "utensils",
+                                label = "I want a Torpedo Burger",
+                            },
+                        },
+                        distance = 2.5
+            })
+         exports['qb-target']:AddBoxZone("burgershotcustomer6", vector3(-1186.91, -894.57, 14.0), 1.8, 3.2, {
+            name="burgershotcustomer6",
+            heading=33,
+            debugPoly=true,
+            minZ=10.4,
+            maxZ=14.4,
+                }, {
+                        options = {
+                            {
+                                event = "qb-BurgerShot:BurgerShotCustomer6",
+                                icon = "utensils",
+                                label = "I want a MURDER MEAL!!",
+                            },
+                        },
+                        distance = 2.5
+            })
+    --End
 
 end)
 

@@ -3,7 +3,6 @@ AddEventHandler("qb-burgershot:bill:player", function(playerId, amount)
         local biller = QBCore.Functions.GetPlayer(source)
         local billed = QBCore.Functions.GetPlayer(tonumber(playerId))
         local amount = tonumber(amount)
-        if biller.PlayerData.job.name == 'burgershot' then
             if billed ~= nil then
                 if biller.PlayerData.citizenid ~= billed.PlayerData.citizenid then
                     if amount and amount > 0 then
@@ -34,9 +33,6 @@ AddEventHandler("qb-burgershot:bill:player", function(playerId, amount)
             else
                 TriggerClientEvent('QBCore:Notify', source, 'Player Not Online', 'error')
             end
-        else
-            TriggerClientEvent('QBCore:Notify', source, 'No Access', 'error')
-        end
 end)
 
 QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientBurger', function(source, cb)
@@ -156,6 +152,116 @@ QBCore.Functions.CreateCallback("qb-blackmarket:server:get:MethProducts2", funct
         cb(bankMoney)
     end
 end)
+
+--burgershot customers
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:BurgerShotCustomer1', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local heartstopper = Ply.Functions.GetItemByName("burger-heartstopper")
+    if heartstopper ~= nil then
+    if heartstopper.amount >= Config.CustomerCost1 then
+        cb(true)
+    else
+        cb(false)
+        end
+    end
+end)
+
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:BurgerShotCustomer1', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local heartstopper = Ply.Functions.GetItemByName("burger-heartstopper")
+    if heartstopper ~= nil then
+    if heartstopper.amount >= Config.CustomerCost1 then
+        cb(true)
+    else
+        cb(false)
+        end
+    end
+end)
+
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:BurgerShotCustomer2', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local meatfree = Ply.Functions.GetItemByName("burger-meatfree")
+    if meatfree ~= nil then
+    if meatfree.amount >= Config.CustomerCost2 then
+        cb(true)
+    else
+        cb(false)
+        end
+    end
+end)
+
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:BurgerShotCustomer3', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local bleeder = Ply.Functions.GetItemByName("burger-bleeder")
+    if bleeder ~= nil then
+    if bleeder.amount >= Config.CustomerCost3 then
+        cb(true)
+    else
+        cb(false)
+        end
+    end
+end)
+
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:BurgerShotCustomer4', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local moneyshot = Ply.Functions.GetItemByName("burger-moneyshot")
+    if moneyshot ~= nil then
+    if moneyshot.amount >= Config.CustomerCost4 then
+        cb(true)
+    else
+        cb(false)
+        end
+    end
+end)
+
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:BurgerShotCustomer5', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local torpedo = Ply.Functions.GetItemByName("burger-torpedo")
+    if torpedo ~= nil then
+    if torpedo.amount >= Config.CustomerCost5 then
+        cb(true)
+    else
+        cb(false)
+        end
+    end
+end)
+
+QBCore.Functions.CreateCallback('qb-burgershot:server:get:BurgerShotCustomer6', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local murdermeal = Ply.Functions.GetItemByName("burger-murdermeal")
+    if murdermeal ~= nil then
+    if murdermeal.amount >= Config.CustomerCost6 then
+        cb(true)
+    else
+        cb(false)
+        end
+    end
+end)
+
+--end
+--triggermoney
+RegisterNetEvent('qb-burgershot:bsc:collect1', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+     local Reward = math.random(15,30)
+    Player.Functions.AddMoney('cash', Reward, "paid")
+end)
+
+RegisterNetEvent('qb-burgershot:bsc:collect2', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+     local Reward = math.random(50,100)
+    Player.Functions.AddMoney('cash', Reward, "paid")
+end)
+
+--end
 
 QBCore.Functions.CreateUseableItem("burger-murdermeal", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)

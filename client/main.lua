@@ -21,17 +21,13 @@ end
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
 	if PlayerData.job.onduty then
-	    if PlayerData.job.name == "burgershot" then
 		TriggerServerEvent("QBCore:ToggleDuty")
-	    end
 	end
 end)
 
 RegisterNetEvent('QBCore:Client:SetDuty')
 AddEventHandler('QBCore:Client:SetDuty', function(duty)
-    if PlayerData.job.name == 'burgershot' then
     	onDuty = duty
-    end
 end)
 
 Citizen.CreateThread(function()
@@ -472,6 +468,215 @@ AddEventHandler("qb-burgershot:MethProducts1", function()
 				end
 			end)
 		end)
+
+--Selling to Customers
+-- RegisterNetEvent("qb-BurgerShot:BurgerShotCustomer1")
+-- AddEventHandler("qb-BurgerShot:BurgerShotCustomer1", function()
+--         QBCore.Functions.TriggerCallback('qb-burgershot:server:get:BurgerShotCustomer1', function(HasItems)  
+--             if HasItems then
+--                 TriggerServerEvent('QBCore:Server:RemoveItem', "burger-heartstopper", 1)
+--                 QBCore.Functions.Progressbar("pickup_sla", "Servering", 6000, false, true, {
+--                     disableMovement = true,
+--                     disableCarMovement = true,
+--                     disableMouse = false,
+--                     disableCombat = true,
+--                 }, {
+--                     animDict = "mp_common",
+--                     anim = "givetake1_a",
+--                     flags = 8,
+--                 }, {}, {}, function() -- Done
+--                     TriggerServerEvent('qb-burgershot:bsc:collect1')
+--                     QBCore.Functions.Notify("You Served a Customer", "success")
+--                 end, function()
+--                     QBCore.Functions.Notify("Cancelled..", "error")
+--                     TriggerServerEvent('QBCore:Server:AddItem', "burger-heartstopper", 1)
+--                 end)
+--             else
+--             QBCore.Functions.Notify("You Dont Have What I ORDERED!", "error")
+--             end
+--         end)
+--     end)
+RegisterNetEvent("qb-BurgerShot:BurgerShotCustomer1")
+AddEventHandler("qb-BurgerShot:BurgerShotCustomer1", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:BurgerShotCustomer1', function(HasItems)  
+    		if HasItems then
+			TriggerServerEvent('QBCore:Server:RemoveItem', "burger-heartstopper", 1)
+				QBCore.Functions.Progressbar("pickup_sla", "Serving Customer", 6000, false, true, {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+                    TriggerServerEvent('qb-burgershot:bsc:collect1')
+                   	QBCore.Functions.Notify("You Served a Customer", "success")
+				end, function()
+					QBCore.Functions.Notify("Cancelled..", "error")
+					TriggerServerEvent('QBCore:Server:AddItem', "burger-heartstopper", 1)
+				end)
+			else
+   				QBCore.Functions.Notify("You Dont Have What I ORDERED!", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end  
+end)
+RegisterNetEvent("qb-BurgerShot:BurgerShotCustomer2")
+AddEventHandler("qb-BurgerShot:BurgerShotCustomer2", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:BurgerShotCustomer2', function(HasItems)  
+    		if HasItems then
+			TriggerServerEvent('QBCore:Server:RemoveItem', "burger-meatfree", 1)
+				QBCore.Functions.Progressbar("pickup_sla", "Serving Customer", 6000, false, true, {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+                    TriggerServerEvent('qb-burgershot:bsc:collect1')
+                   	QBCore.Functions.Notify("You Served a Customer", "success")
+				end, function()
+					QBCore.Functions.Notify("Cancelled..", "error")
+					TriggerServerEvent('QBCore:Server:AddItem', "burger-meatfree", 1)
+				end)
+			else
+   				QBCore.Functions.Notify("You Dont Have What I ORDERED!", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end  
+end)
+RegisterNetEvent("qb-BurgerShot:BurgerShotCustomer3")
+AddEventHandler("qb-BurgerShot:BurgerShotCustomer3", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:BurgerShotCustomer3', function(HasItems)  
+    		if HasItems then
+			TriggerServerEvent('QBCore:Server:RemoveItem', "burger-bleeder", 1)
+				QBCore.Functions.Progressbar("pickup_sla", "Serving Customer", 6000, false, true, {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+                    TriggerServerEvent('qb-burgershot:bsc:collect1')
+                   	QBCore.Functions.Notify("You Served a Customer", "success")
+				end, function()
+					QBCore.Functions.Notify("Cancelled..", "error")
+					TriggerServerEvent('QBCore:Server:AddItem', "burger-bleeder", 1)
+				end)
+			else
+   				QBCore.Functions.Notify("You Dont Have What I ORDERED!", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end  
+end)
+RegisterNetEvent("qb-BurgerShot:BurgerShotCustomer4")
+AddEventHandler("qb-BurgerShot:BurgerShotCustomer4", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:BurgerShotCustomer4', function(HasItems)  
+    		if HasItems then
+			TriggerServerEvent('QBCore:Server:RemoveItem', "burger-moneyshot", 1)
+				QBCore.Functions.Progressbar("pickup_sla", "Serving Customer", 6000, false, true, {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+                    TriggerServerEvent('qb-burgershot:bsc:collect1')
+                   	QBCore.Functions.Notify("You Served a Customer", "success")
+				end, function()
+					QBCore.Functions.Notify("Cancelled..", "error")
+					TriggerServerEvent('QBCore:Server:AddItem', "burger-moneyshot", 1)
+				end)
+			else
+   				QBCore.Functions.Notify("You Dont Have What I ORDERED!", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end  
+end)
+RegisterNetEvent("qb-BurgerShot:BurgerShotCustomer5")
+AddEventHandler("qb-BurgerShot:BurgerShotCustomer5", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:BurgerShotCustomer5', function(HasItems)  
+    		if HasItems then
+			TriggerServerEvent('QBCore:Server:RemoveItem', "burger-torpedo", 1)
+				QBCore.Functions.Progressbar("pickup_sla", "Serving Customer", 6000, false, true, {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+                    TriggerServerEvent('qb-burgershot:bsc:collect1')
+                   	QBCore.Functions.Notify("You Served a Customer", "success")
+				end, function()
+					QBCore.Functions.Notify("Cancelled..", "error")
+					TriggerServerEvent('QBCore:Server:AddItem', "burger-torpedo", 1)
+				end)
+			else
+   				QBCore.Functions.Notify("You Dont Have What I ORDERED!", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end  
+end)
+RegisterNetEvent("qb-BurgerShot:BurgerShotCustomer6")
+AddEventHandler("qb-BurgerShot:BurgerShotCustomer6", function()
+    if onDuty then
+    	QBCore.Functions.TriggerCallback('qb-burgershot:server:get:BurgerShotCustomer6', function(HasItems)  
+    		if HasItems then
+			TriggerServerEvent('QBCore:Server:RemoveItem', "burger-murdermeal", 1)
+				QBCore.Functions.Progressbar("pickup_sla", "Serving Customer", 6000, false, true, {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				}, {
+					animDict = "mp_common",
+					anim = "givetake1_a",
+					flags = 8,
+				}, {}, {}, function() -- Done
+                    TriggerServerEvent('qb-burgershot:bsc:collect2')
+                   	QBCore.Functions.Notify("You Served a Customer", "success")
+				end, function()
+					QBCore.Functions.Notify("Cancelled..", "error")
+					TriggerServerEvent('QBCore:Server:AddItem', "burger-murdermeal", 1)
+				end)
+			else
+   				QBCore.Functions.Notify("You Dont Have What I ORDERED!", "error")
+			end
+		end)
+	else 
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end  
+end)
+--end
 	
 
 
