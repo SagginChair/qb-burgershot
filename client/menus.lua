@@ -220,7 +220,7 @@ Citizen.CreateThread(function()
                 options = {
                     {
                         event = "nh-context:DarkMarketBS",
-                        icon = "fas fa-cheeseburger",
+                        icon = "fas fa-ban",
                         label = "Don't Touch",
                     },
                 },
@@ -308,14 +308,14 @@ Citizen.CreateThread(function()
     exports['qb-target']:AddBoxZone("burgershotcustomer1", vector3(-1194.31, -883.52, 14.0), 2.0, 2.8, {
         name="burgershotcustomer1",
         heading=34,
-        debugPoly=true,
+        debugPoly=false,
         minZ=10.4,
         maxZ=14.4,
             }, {
                     options = {
                         {
                             event = "qb-BurgerShot:BurgerShotCustomer1",
-                            icon = "utensils",
+                            icon = "fas fa-utensils",
                             label = "I want a Heart Stopper",
                         },
                     },
@@ -324,14 +324,14 @@ Citizen.CreateThread(function()
         exports['qb-target']:AddBoxZone("burgershotcustomer2", vector3(-1191.72, -886.78, 14.0), 3.8, 2.4, {
         name="burgershotcustomer2",
         heading=305,
-        debugPoly=true,
+        debugPoly=false,
         minZ=10.4,
         maxZ=14.4,
             }, {
                     options = {
                         {
                             event = "qb-BurgerShot:BurgerShotCustomer2",
-                            icon = "utensils",
+                            icon = "fas fa-utensils",
                             label = "I want a Meat Free Burger",
                         },
                     },
@@ -340,14 +340,14 @@ Citizen.CreateThread(function()
         exports['qb-target']:AddBoxZone("burgershotcustomer3", vector3(-1188.96, -880.27, 14.0), 2.4, 2.4, {
             name="burgershotcustomer3",
             heading=35,
-            debugPoly=true,
+            debugPoly=false,
             minZ=10.4,
             maxZ=14.4,
                 }, {
                         options = {
                             {
                                 event = "qb-BurgerShot:BurgerShotCustomer3",
-                                icon = "utensils",
+                                icon = "fas fa-utensils",
                                 label = "I want a Bleeder Burger",
                             },
                         },
@@ -356,14 +356,14 @@ Citizen.CreateThread(function()
          exports['qb-target']:AddBoxZone("burgershotcustomer4", vector3(-1186.97, -889.29, 14.0), 2.2, 1.2, {
             name="burgershotcustomer4",
             heading=35,
-            debugPoly=true,
+            debugPoly=false,
             minZ=10.4,
             maxZ=14.4,
                 }, {
                         options = {
                             {
                                 event = "qb-BurgerShot:BurgerShotCustomer4",
-                                icon = "utensils",
+                                icon = "fas fa-utensils",
                                 label = "I want a Money Shot Burger",
                             },
                         },
@@ -372,14 +372,14 @@ Citizen.CreateThread(function()
             exports['qb-target']:AddBoxZone("burgershotcustomer5", vector3(-1189.1, -891.17, 14.0), 3.8, 2.4, {
             name="burgershotcustomer5",
             heading=305,
-            debugPoly=true,
+            debugPoly=false,
             minZ=10.4,
             maxZ=14.4,
                 }, {
                         options = {
                             {
                                 event = "qb-BurgerShot:BurgerShotCustomer5",
-                                icon = "utensils",
+                                icon = "fas fa-utensils",
                                 label = "I want a Torpedo Burger",
                             },
                         },
@@ -388,15 +388,31 @@ Citizen.CreateThread(function()
          exports['qb-target']:AddBoxZone("burgershotcustomer6", vector3(-1186.91, -894.57, 14.0), 1.8, 3.2, {
             name="burgershotcustomer6",
             heading=33,
-            debugPoly=true,
+            debugPoly=false,
             minZ=10.4,
             maxZ=14.4,
                 }, {
                         options = {
                             {
                                 event = "qb-BurgerShot:BurgerShotCustomer6",
-                                icon = "utensils",
+                                icon = "fas fa-utensils",
                                 label = "I want a MURDER MEAL!!",
+                            },
+                        },
+                        distance = 2.5
+            })
+         exports['qb-target']:AddBoxZone("bsmoneywash", vector3(-1183.06, -888.03, 14.0), 3.2, 2.0, {
+            name="bsmoneywash",
+            heading=35,
+            debugPoly=false,
+            minZ=10.4,
+            maxZ=14.4,
+                }, {
+                        options = {
+                            {
+                                event = "qb-itemshop:MoneyWashLow",
+                                icon = "fas fa-money-bill-wave",
+                                label = "Wash Money",
                             },
                         },
                         distance = 2.5
