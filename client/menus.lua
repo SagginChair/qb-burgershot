@@ -263,8 +263,6 @@ Citizen.CreateThread(function()
                     },
                     distance = 1.5
                 })  
-
-
         exports['qb-target']:AddBoxZone("BurgerShot_register_3", vector3(-1193.39, -895.22, 14.0), 0.6, 0.4, {
             name="BurgerShot_register_3",
             debugPoly=false,
@@ -282,10 +280,6 @@ Citizen.CreateThread(function()
                             },
                             distance = 1.5
                         })  
-
-
-
-
         exports['qb-target']:AddBoxZone("BurgerShot_register_4", vector3(-1192.52, -906.65, 14.0), 0.5, 0.5, {
             name="BurgerShot_register_4",
             heading=0,
@@ -417,8 +411,6 @@ Citizen.CreateThread(function()
                         },
                         distance = 2.5
             })
-    --End
-
 end)
 
 
