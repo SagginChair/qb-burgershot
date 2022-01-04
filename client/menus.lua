@@ -2,9 +2,9 @@
 -- target
 
 Citizen.CreateThread(function()
-	exports['qb-target']:AddBoxZone("BurgerShotDuty", vector3(-1196.54, -902.86, 14.0), 0.5, 1.2, {
+	exports['qb-target']:AddBoxZone("BurgerShotDuty", vector3(-1188.76, -901.21, 13.97), 1.4, 0.2, {
 		name = "BurgerShotDuty",
-		heading = 30,
+		heading = 35,
 		debugPoly = false,
 		minZ=12.0,
 		maxZ=18.0,
@@ -19,64 +19,29 @@ Citizen.CreateThread(function()
 		distance = 1.5
 	})
 
-		exports['qb-target']:AddBoxZone("burger_tray_1", vector3(-1195.29, -892.31, 14.0), 1.05, 1.0, {
+		exports['qb-target']:AddBoxZone("burger_tray_1", vector3(-1193.52, -895.26, 13.97), 7.6, 1.0, {
 			name = "burger_tray_1",
 			heading = 35.0,
 			debugPoly = false,
-			minZ=13.8,
-			maxZ=14.3,
+            minZ=10.37,
+            maxZ=14.37,
 		}, {
 			options = {
 			    {
 				event = "qb-burgershot:Tray1",
 				icon = "far fa-clipboard",
-				label = "Tray 1",
+				label = "Tray",
 			    },
 			},
 			distance = 1.5
 		})
 
-	exports['qb-target']:AddBoxZone("burger_tray_2", vector3(-1193.87, -894.38, 14.0), 0.5, 0.7, {
-		name="burger_tray_2",
-		heading=318,
-		debugPoly=false,
-		minZ=14.0,
-		maxZ=14.4,
-	}, {
-		options = {
-		    {
-			event = "qb-burgershot:Tray4",
-			icon = "far fa-clipboard",
-			label = "Tray 2",
-		    },
-		},
-		distance = 1.5
-	})
-
-	exports['qb-target']:AddBoxZone("burger_tray_3", vector3(-1193.88, -906.98, 14.0), 1, 1, {
-		name="burger_tray_3",
-		heading=350,
-		debugPoly=false,
-		minZ=13.2,
-		maxZ=14.2,
-	}, {
-		options = {
-		    {
-			event = "qb-burgershot:Tray3",
-			icon = "far fa-clipboard",
-			label = "Tray 3",
-		    },
-		},
-		distance = 3.5
-	})
-
-
-	exports['qb-target']:AddBoxZone("burgershotcooker", vector3(-1200.54, -900.92, 14.0), 1.8, 1.0, {
+	exports['qb-target']:AddBoxZone("burgershotcooker", vector3(-1198.32, -895.14, 13.97), 1.6, 1.0, {
 		name="burgershotcooker",
-		heading=34,
+		heading=305,
 		debugPoly=false,
-		minZ=13.0,
-		maxZ=14.4,
+        minZ=10.17,
+        maxZ=14.17,
 	}, {
 		options = {
 			{
@@ -87,30 +52,12 @@ Citizen.CreateThread(function()
 		},
 		distance = 1.5
 	})
-
-	exports['qb-target']:AddBoxZone("burgershotcooker2 ", vector3(-1202.94, -897.38, 14.0), 1.7, 1, {
-		name="burgershotcooker2 ",
-		heading=34,
-		debugPoly=false,
-		minZ=13.0,
-		maxZ=14.3,
-	}, {
-		options = {
-			{
-				event = "qb-burgershot:PattyFry",
-				icon = "fas fa-hamburger",
-				label = "Burger Cook Station 2",
-			},
-		},
-		distance = 1.5
-	})
-
-		exports['qb-target']:AddBoxZone("burgershotfryer", vector3(-1202.01, -899.27, 14.0), 2.5, 1.5, {
+		exports['qb-target']:AddBoxZone("burgershotfryer", vector3(-1200.97, -896.73, 13.97), 1.8, 1.0, {
 		name="burgershotfryer",
-		heading=35,
+		heading=304,
 		debugPoly=false,
-		minZ=13.0,
-		maxZ=14.4,
+        minZ=10.17,
+        maxZ=14.17,
 		}, {
 		    options = {
 			{
@@ -123,12 +70,12 @@ Citizen.CreateThread(function()
 		})
 
 
-	exports['qb-target']:AddBoxZone("burgershotdrinks", vector3(-1199.54, -895.52, 14.0), 2.2, 0.6, {
+	exports['qb-target']:AddBoxZone("burgershotdrinks", vector3(-1196.7, -895.08, 13.97), 2.2, 0.8, {
 	    name="burgershotdrinks",
-	    heading=34,
+	    heading=35,
 	    debugPoly=false,
-	    minZ=13.8,
-	    maxZ=14.8,
+        minZ=10.97,
+        maxZ=14.97,
 	    }, {
 		options = {
 		    {
@@ -140,30 +87,12 @@ Citizen.CreateThread(function()
 		distance = 1.5
 	    })
 
-        exports['qb-target']:AddBoxZone("burgershotdrinks2", vector3(-1188.81, -905.22, 14.0), 0.8, 1.5, {
-            name="burgershotdrinks2",
-            heading=33,
-            debugPoly=false,
-            minZ=13.8,
-            maxZ=14.8,
-            }, {
-                options = {
-                    {
-                        event = "nh-context:DrinkMenu",
-                        icon = "fas fa-filter",
-                        label = "Make Some Drinks",
-                    },
-                },
-                distance = 1.5
-            })
-
-
-         exports['qb-target']:AddBoxZone("burgerfridge", vector3(-1203.71, -895.86, 14.0), 1.6, 1, {
+         exports['qb-target']:AddBoxZone("burgerfridge", vector3(-1201.38, -901.66, 13.97), 4.0, 1.2, {
             name="burgerfridge",
             heading=35,
             debugPoly=false,
-            minZ=13.0,
-            maxZ=15.6,
+            minZ=11.17,
+            maxZ=15.17,
         }, {
                 options = {
                     {
@@ -175,12 +104,12 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-        exports['qb-target']:AddBoxZone("burgershotdisplay", vector3(-1197.78, -894.45, 14.0), 4.6, 1.2, {
+        exports['qb-target']:AddBoxZone("burgershotdisplay", vector3(-1195.34, -897.5, 13.97), 3.4, 1.2, {
             name="burgershotdisplay",
             heading=34,
             debugPoly=false,
-            minZ=13.0,
-            maxZ=14.8,
+            minZ=10.97,
+            maxZ=14.97,
         }, {
                 options = {
                     {
@@ -193,12 +122,12 @@ Citizen.CreateThread(function()
             })
 
 
-        exports['qb-target']:AddBoxZone("craftburger", vector3(-1197.57, -899.41, 14.0), 1.8, 0.7, {
+        exports['qb-target']:AddBoxZone("craftburger", vector3(-1197.44, -898.39, 13.97), 3.4, 1.0, {
             name="craftburger",
             heading=304,
             debugPoly=false,
-            minZ=13.0,
-            maxZ=14.4,
+            minZ=10.37,
+            maxZ=14.37,
         }, {
                 options = {
                     {
@@ -209,99 +138,10 @@ Citizen.CreateThread(function()
                 },
                 distance = 1.5
             })
-
-         exports['qb-target']:AddBoxZone("burgershotillegal", vector3(-1190.54, -902.99, 14.92), 0.7, 1.7, {
-            name="burgershotillegal",
-            heading=304,
-            debugPoly=false,
-            minZ=13.0,
-            maxZ=14.4,
-        }, {
-                options = {
-                    {
-                        event = "nh-context:DarkMarketBS",
-                        icon = "fas fa-ban",
-                        label = "Don't Touch",
-                    },
-                },
-                distance = 2.0
-            })
-
-
-        exports['qb-target']:AddBoxZone("BurgerShot_register_1", vector3(-1196.01, -891.34, 14.0), 0.5, 0.4, {
-            name="BurgerShot_register_1",
-            debugPoly=false,
-            heading=125,
-            minZ=14.0,
-            maxZ=14.5,
-        }, {
-                options = {
-                    {
-                        event = "qb-burgershot:bill",
-                        parms = "1",
-                        icon = "fas fa-credit-card",
-                        label = "Charge Customer",
-                    },
-                },
-                distance = 1.5
-            })
-
-        exports['qb-target']:AddBoxZone("BurgerShot_register_2", vector3(-1194.65, -893.3, 14.0), 0.6, 0.5, {
-            name="BurgerShot_register_2",
-            debugPoly=false,
-            heading=302,
-            minZ=14.1,
-            maxZ=14.5,
-            }, {
-                    options = {
-                        {
-                            event = "qb-burgershot:bill",
-                            parms = "2",
-                            icon = "fas fa-credit-card",
-                            label = "Charge Customer",
-                        },
-                    },
-                    distance = 1.5
-                })  
-        exports['qb-target']:AddBoxZone("BurgerShot_register_3", vector3(-1193.39, -895.22, 14.0), 0.6, 0.4, {
-            name="BurgerShot_register_3",
-            debugPoly=false,
-            heading=125,
-            minZ=14.0,
-            maxZ=14.4,
-                    }, {
-                            options = {
-                                {
-                                    event = "qb-burgershot:bill",
-                                    parms = "3",
-                                    icon = "fas fa-credit-card",
-                                    label = "Charge Customer",
-                                },
-                            },
-                            distance = 1.5
-                        })  
-        exports['qb-target']:AddBoxZone("BurgerShot_register_4", vector3(-1192.52, -906.65, 14.0), 0.5, 0.5, {
-            name="BurgerShot_register_4",
-            heading=0,
-            debugPoly=false,
-            minZ=13.8,
-            maxZ=14.2,
-                }, {
-                        options = {
-                            {
-                                event = "qb-burgershot:bill",
-                                parms = "4",
-                                icon = "fas fa-credit-card",
-                                label = "Charge Customer",
-                            },
-                        },
-                        distance = 1.5
-            })
-
     --BurgerShot Customers
-    exports['qb-target']:AddBoxZone("burgershotcustomer1", vector3(-1194.31, -883.52, 14.0), 2.0, 2.8, {
+    exports['qb-target']:AddBoxZone("burgershotcustomer1", vector3(-1193.29, -882.46, 13.97), 1.6, 2.4, {
         name="burgershotcustomer1",
-        heading=34,
+        heading=35,
         debugPoly=false,
         minZ=10.4,
         maxZ=14.4,
@@ -315,7 +155,7 @@ Citizen.CreateThread(function()
                     },
                     distance = 2.5
         })
-        exports['qb-target']:AddBoxZone("burgershotcustomer2", vector3(-1191.72, -886.78, 14.0), 3.8, 2.4, {
+        exports['qb-target']:AddBoxZone("burgershotcustomer2", vector3(-1191.72, -886.78, 14.0), 2.7, 2.2, {
         name="burgershotcustomer2",
         heading=305,
         debugPoly=false,
@@ -347,9 +187,9 @@ Citizen.CreateThread(function()
                         },
                         distance = 2.5
             })
-         exports['qb-target']:AddBoxZone("burgershotcustomer4", vector3(-1186.97, -889.29, 14.0), 2.2, 1.2, {
+         exports['qb-target']:AddBoxZone("burgershotcustomer4", vector3(-1186.96, -889.72, 13.97), 2.4, 1.6, {
             name="burgershotcustomer4",
-            heading=35,
+            heading=305,
             debugPoly=false,
             minZ=10.4,
             maxZ=14.4,
@@ -363,7 +203,7 @@ Citizen.CreateThread(function()
                         },
                         distance = 2.5
             })
-            exports['qb-target']:AddBoxZone("burgershotcustomer5", vector3(-1189.1, -891.17, 14.0), 3.8, 2.4, {
+            exports['qb-target']:AddBoxZone("burgershotcustomer5", vector3(-1189.1, -891.17, 14.0), 2.4, 2.4, {
             name="burgershotcustomer5",
             heading=305,
             debugPoly=false,
@@ -379,9 +219,9 @@ Citizen.CreateThread(function()
                         },
                         distance = 2.5
             })
-         exports['qb-target']:AddBoxZone("burgershotcustomer6", vector3(-1186.91, -894.57, 14.0), 1.8, 3.2, {
+         exports['qb-target']:AddBoxZone("burgershotcustomer6", vector3(-1188.66, -896.01, 13.97), 1.6, 2.6, {
             name="burgershotcustomer6",
-            heading=33,
+            heading=35,
             debugPoly=false,
             minZ=10.4,
             maxZ=14.4,
@@ -391,22 +231,6 @@ Citizen.CreateThread(function()
                                 event = "qb-BurgerShot:BurgerShotCustomer6",
                                 icon = "fas fa-utensils",
                                 label = "I want a MURDER MEAL!!",
-                            },
-                        },
-                        distance = 2.5
-            })
-         exports['qb-target']:AddBoxZone("bsmoneywash", vector3(-1183.06, -888.03, 14.0), 3.2, 2.0, {
-            name="bsmoneywash",
-            heading=35,
-            debugPoly=false,
-            minZ=10.4,
-            maxZ=14.4,
-                }, {
-                        options = {
-                            {
-                                event = "qb-itemshop:MoneyWashLow",
-                                icon = "fas fa-money-bill-wave",
-                                label = "Wash Money",
                             },
                         },
                         distance = 2.5

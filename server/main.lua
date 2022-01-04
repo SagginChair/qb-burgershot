@@ -99,32 +99,6 @@ QBCore.Functions.CreateCallback('qb-burgershot:server:get:leancup1', function(so
     end
 end)
 
-QBCore.Functions.CreateCallback('qb-burgershot:server:get:leancup2', function(source, cb)
-    local src = source
-    local Ply = QBCore.Functions.GetPlayer(src)
-    local sodasyrup = Ply.Functions.GetItemByName("burger-sodasyrup")
-    local nyquil = Ply.Functions.GetItemByName("bsnyquil")
-    local spaint = Ply.Functions.GetItemByName("methspraypaint")
-    if sodasyrup ~= nil and nyquil ~= nil and spaint ~= nil then
-        cb(true)
-    else
-        cb(false)
-    end
-end)
-
-QBCore.Functions.CreateCallback('qb-burgershot:server:get:leancup3', function(source, cb)
-    local src = source
-    local Ply = QBCore.Functions.GetPlayer(src)
-    local sodasyrup = Ply.Functions.GetItemByName("burger-sodasyrup")
-    local nyquil = Ply.Functions.GetItemByName("bsnyquil")
-    local gpaint = Ply.Functions.GetItemByName("methgallonpaint")
-    if sodasyrup ~= nil and nyquil ~= nil and gpaint ~= nil then
-        cb(true)
-    else
-        cb(false)
-    end
-end)
-
 QBCore.Functions.CreateCallback("qb-blackmarket:server:get:MethProducts1", function(source, cb)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -250,14 +224,14 @@ end)
 RegisterNetEvent('qb-burgershot:bsc:collect1', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-     local Reward = math.random(15,30)
+     local Reward = math.random(35,50)
     Player.Functions.AddMoney('cash', Reward, "paid")
 end)
 
 RegisterNetEvent('qb-burgershot:bsc:collect2', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-     local Reward = math.random(50,100)
+     local Reward = math.random(65,120)
     Player.Functions.AddMoney('cash', Reward, "paid")
 end)
 
